@@ -1,0 +1,48 @@
+{% extends 'core/hf.html' %}
+{% load static %}
+
+{% block body %}
+
+<section class="inner_page_head">
+   <div class="container_fuild">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="full">
+               <h3> 
+                  Login 
+               </h3>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="why_section layout_padding">
+   <div class="container">
+   
+      <div class="row">
+         <div class="col-lg-8 offset-lg-2">
+            <div class="full">
+               <form action="." method="post">
+                  {% csrf_token %}
+                  {{form.as_p}}
+                  <!-- <fieldset>
+                     <input type="text" placeholder="Enter your full name" name="name" required />
+                     <input type="email" placeholder="Enter your email address" name="email" required />
+                     <input type="password" placeholder="Enter your Password" name="pwd" required />
+                      -->
+                     <input type="submit" value="Submit" />
+                     <div class="text-center text-primary fw-bold">
+                       <small><u>Create New Account?</u><a href="{% url 'authsystem:myregister' %}"  class="text-dangaer">Click here</a></small>
+                        <!-- <input type="submit" value="Already have Account Login here" /> -->
+                     </div>
+                     
+                  <!-- </fieldset> -->
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+{% endblock %}

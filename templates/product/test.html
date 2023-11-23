@@ -1,0 +1,37 @@
+{% extends 'core/hf.html' %}
+{% load static %}
+
+{% block body %}
+    <!-- product details section -->
+    <section class="product-details-section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="product-image">
+                        <img src="{{ product.P_Image.url }}" alt="{{ product.P_name }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="product-details">
+                        <h2>{{ product.P_name }}</h2>
+                        <p>{{ product.P_Description }}</p>
+                        <p>Price: {{ product.P_Price }}</p>
+                        <label for="size">Select Size:</label>
+                        <select id="size" name="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                        <button type="button" onclick="addToCart()">Add to Cart</button>
+                        <button type="button" onclick="addToWishlist()">Add to Wishlist</button>
+                        <button type="button" onclick="buyNow()">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end product details section -->
+{% endblock %}
+
+
+
